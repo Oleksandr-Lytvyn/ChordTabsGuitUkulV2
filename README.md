@@ -100,7 +100,7 @@ GitHub.
 </BrowserRouter>
 ```
 
-## Как это работает
+## Как это работает?
 
 ![How it works](./assets/how-it-works.png)
 
