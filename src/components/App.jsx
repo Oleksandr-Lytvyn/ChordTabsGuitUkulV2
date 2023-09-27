@@ -1,16 +1,25 @@
+import { useChord } from 'context/chordContext';
+import { MainWindow } from './MainWindow/MainWindow';
+import { SideLeft } from './SideLeft/SideLeft';
+import { SideRight } from './SideRight/SideRight';
+
+import dbGuitar from '../db/guitar.json';
+import dbUkulele from '../db/ukulele.json';
+const arrayOfObjects = Object.values(dbGuitar);
+
 export const App = () => {
+  const { key, suffix, instr, chordSet } = useChord();
+  if (key && suffix && instr) {
+    const result = dbGuitar.chords[key].find(
+      (element, index, array) => element.suffix === suffix
+    );
+    console.log(result);
+    chordSet(result);
+  }
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <MainWindow>
+      <SideLeft />
+      <SideRight />
+    </MainWindow>
   );
 };
