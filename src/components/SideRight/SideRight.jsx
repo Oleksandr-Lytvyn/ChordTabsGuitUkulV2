@@ -3,10 +3,14 @@ import { useChord } from 'context/chordContext';
 
 export const SideRight = () => {
   const { chord } = useChord();
-  console.log(chord.positions);
   return (
     <div className="right">
-      <GuitarTabsList chord={chord} />
+      <button type="button">vertical</button>
+      <button type="button">horizontal L</button>
+      <button type="button">horizontal R</button>
+      <div className="right">
+        <GuitarTabsList chord={chord} />
+      </div>
     </div>
   );
 };

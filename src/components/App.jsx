@@ -4,8 +4,7 @@ import { SideLeft } from './SideLeft/SideLeft';
 import { SideRight } from './SideRight/SideRight';
 
 import dbGuitar from '../db/guitar.json';
-import dbUkulele from '../db/ukulele.json';
-const arrayOfObjects = Object.values(dbGuitar);
+// import dbUkulele from '../db/ukulele.json';
 
 export const App = () => {
   const { key, suffix, instr, chordSet } = useChord();
@@ -13,7 +12,7 @@ export const App = () => {
     const result = dbGuitar.chords[key].find(
       (element, index, array) => element.suffix === suffix
     );
-    console.log(result);
+    // console.log(result);
     chordSet(result);
   }
   return (

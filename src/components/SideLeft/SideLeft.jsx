@@ -1,7 +1,7 @@
 import { NavInstr } from 'components/NavInstr/NavInstr';
 import { NavKey } from 'components/NavKey/NavKey';
 import { NavSuffix } from 'components/NavSuffix/NavSuffix';
-import { useChord } from 'context/chordContext';
+// import { useChord } from 'context/chordContext';
 
 export const SideLeft = () => {
   return (

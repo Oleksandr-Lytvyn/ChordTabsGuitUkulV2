@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledChordGuitarWrapper = styled.div`
   display: flex;
   background: #f0e9c6;
+  /* rotate: -90deg; */
 `;
 
 export const StyledChordGuitar = styled.div`
@@ -14,5 +15,4 @@ export const StyledChordGuitar = styled.div`
   background-position: 8px 0;
   display: flex;
   justify-content: space-between;
-  // flexGrow: '1',
 `;
