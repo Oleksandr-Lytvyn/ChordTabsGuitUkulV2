@@ -6,8 +6,10 @@ import {
 import * as Tone from 'tone';
 import { getMidiNote } from 'utilites/getMidiNote';
 import { midiToNote } from 'utilites/midiToNote';
+import { useChord } from 'context/chordContext';
 
-const Finger = ({ step, onClick }) => {
+const Finger = ({ step, onClick, rotation }) => {
+  // console.log(rotation);
   const finger = {};
   if (step.fret === -1) {
     finger.vertical = '0';
@@ -56,9 +58,12 @@ const Finger = ({ step, onClick }) => {
         justifyContent: 'center',
         border: '7px solid transparent',
         boxSizing: 'border-box',
+        // rotate: '90deg',
       }}
     >
-      {finger.finger}
+      <span style={{ transform: rotation === 'horizontal' && 'rotate(90deg)' }}>
+        {finger.finger}
+      </span>
     </div>
   );
 };
@@ -95,8 +100,8 @@ const Dot = ({ visible, step }) => {
     <div
       style={{
         position: 'absolute',
-        width: '16px',
-        height: '16px',
+        width: '14px',
+        height: '14px',
         background: `white`,
         transform: `translate(42px, ${height})`,
         textAlign: 'center',
@@ -137,7 +142,7 @@ const String = ({ status, pos }) => {
 };
 
 export const ChordGuitar = ({ steps, midi, play, setNotes, baseFret }) => {
-  // console.log(steps);
+  const { rotation } = useChord();
   let i = 0;
   const fingerboard = {
     1: false,
@@ -161,14 +166,14 @@ export const ChordGuitar = ({ steps, midi, play, setNotes, baseFret }) => {
   }
   return (
     <StyledChordGuitarWrapper>
-      {steps.map((element, index) => {
-        return <String status={element.fret} key={index} pos={index + 1} />;
-      })}
-      {dots.map((element, index) => {
-        return <Dot key={index} visible={element} step={index + 1} />;
-      })}
       <div>
-        <StyledChordGuitar>
+        <StyledChordGuitar r={rotation}>
+          {steps.map((element, index) => {
+            return <String status={element.fret} key={index} pos={index + 1} />;
+          })}
+          {dots.map((element, index) => {
+            return <Dot key={index} visible={element} step={index + 1} />;
+          })}
           {steps.map(step => {
             i += 1;
             const midi = getMidiNote(step, i).toString();
@@ -182,7 +187,7 @@ export const ChordGuitar = ({ steps, midi, play, setNotes, baseFret }) => {
                 }}
                 key={nanoid()}
                 step={step}
-                // note={note}
+                rotation={rotation}
               ></Finger>
             );
           })}

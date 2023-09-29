@@ -2,15 +2,21 @@ import { GuitarTabsList } from 'components/GuitarTabsList/GuitarTabsList';
 import { useChord } from 'context/chordContext';
 
 export const SideRight = () => {
-  const { chord } = useChord();
+  const { chord, rotationSet } = useChord();
+  const onClick = e => {
+    e.preventDefault();
+    console.dir();
+    rotationSet(e.target.textContent);
+  };
   return (
     <div className="right">
-      <button type="button">vertical</button>
-      <button type="button">horizontal L</button>
-      <button type="button">horizontal R</button>
-      <div className="right">
-        <GuitarTabsList chord={chord} />
-      </div>
+      <button type="button" onClick={onClick}>
+        vertical
+      </button>
+      <button type="button" onClick={onClick}>
+        horizontal
+      </button>
+      <GuitarTabsList chord={chord} />
     </div>
   );
 };

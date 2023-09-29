@@ -9,6 +9,7 @@ export const ChordProvider = ({ children }) => {
   const [key, setKey] = useState('');
   const [suffix, setSuffix] = useState('');
   const [chord, setChord] = useState('');
+  const [rotation, setRotation] = useState('vertical');
 
   const keySet = key => {
     setKey(key);
@@ -25,6 +26,9 @@ export const ChordProvider = ({ children }) => {
   const chordSet = arr => {
     setChord(arr);
   };
+  const rotationSet = pos => {
+    setRotation(pos);
+  };
 
   return (
     <ChordContext.Provider
@@ -33,10 +37,12 @@ export const ChordProvider = ({ children }) => {
         key,
         suffix,
         chord,
+        rotation,
         instrSet,
         keySet,
         suffixSet,
         chordSet,
+        rotationSet,
       }}
     >
       {children}
