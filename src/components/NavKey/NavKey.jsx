@@ -4,10 +4,15 @@ import dbGUkulele from '../../db/ukulele.json';
 // console.log(dbGUkulele);
 
 export const NavKey = () => {
-  const { instr, keySet } = useChord();
+  const { instr, keySet, key } = useChord();
 
   const handleKey = e => {
-    keySet(e.target.value);
+    if (e.target.value === 'C#') {
+      keySet('Csharp');
+    } else if (e.target.value === 'F#') {
+      keySet('Fsharp');
+    } else keySet(e.target.value);
+    console.log(key);
   };
 
   return (

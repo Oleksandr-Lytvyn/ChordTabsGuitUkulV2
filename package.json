@@ -2,7 +2,7 @@
   "name": "react-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Oleksandr-Lytvyn.github.io/template/",
+  "homepage": "https://Oleksandr-Lytvyn.github.io/ChordTabsGuitUkulV2/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",

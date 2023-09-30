@@ -91,3 +91,9 @@ code {
 .custom-radio input[type='radio']:checked + span {
   background-color: #00a000; /* Цвет метки при выборе */
 }
+
+.finger {
+  :hover {
+    cursor: pointer;
+  }
+}

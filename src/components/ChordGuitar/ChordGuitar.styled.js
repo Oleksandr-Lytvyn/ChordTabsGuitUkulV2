@@ -5,6 +5,7 @@ export const StyledChordGuitarWrapper = styled.div`
   width: 100px;
   height: 100px;
   background: #f0e9c6;
+  transform: scale(2) translateX(30%);
 `;
 
 export const StyledChordGuitar = styled.div`

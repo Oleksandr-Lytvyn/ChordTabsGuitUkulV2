@@ -9,6 +9,7 @@ import dbGuitar from '../db/guitar.json';
 export const App = () => {
   const { key, suffix, instr, chordSet } = useChord();
   if (key && suffix && instr) {
+    // console.log(key);
     const result = dbGuitar.chords[key].find(
       (element, index, array) => element.suffix === suffix
     );
