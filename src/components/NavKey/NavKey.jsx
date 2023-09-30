@@ -1,6 +1,6 @@
 import { useChord } from 'context/chordContext';
 import dbGuitar from '../../db/guitar.json';
-import dbGUkulele from '../../db/ukulele.json';
+// import dbGUkulele from '../../db/ukulele.json';
 // console.log(dbGUkulele);
 
 export const NavKey = () => {

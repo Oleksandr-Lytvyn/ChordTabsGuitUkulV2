@@ -1,5 +1,3 @@
-import { hover } from '@testing-library/user-event/dist/hover';
-
 export const Finger = ({ step, onClick, rotation }) => {
   // console.log(rotation);
   const finger = {};
