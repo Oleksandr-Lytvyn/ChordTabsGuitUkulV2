@@ -1,4 +1,4 @@
-import { useChord } from 'context/chordContext';
+// import { useChord } from 'context/chordContext';
 
 export const MainWindow = ({ children }) => {
   //   const chord = useChord();

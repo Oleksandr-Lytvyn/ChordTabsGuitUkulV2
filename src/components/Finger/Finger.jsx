@@ -1,5 +1,4 @@
 export const Finger = ({ step, onClick, rotation }) => {
-  // console.log(rotation);
   const finger = {};
   if (step.fret === -1) {
     finger.vertical = '0';
@@ -30,6 +29,8 @@ export const Finger = ({ step, onClick, rotation }) => {
     finger.isFinger = true;
     finger.finger = 4;
   }
+
+  console.log(step);
 
   return (
     <div
