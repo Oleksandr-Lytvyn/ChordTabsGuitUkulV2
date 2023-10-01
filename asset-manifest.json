@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/ChordTabsGuitUkulV2/static/css/main.d6758d15.css",
+    "main.js": "/ChordTabsGuitUkulV2/static/js/main.d92782eb.js",
+    "static/media/gitar-fret.png": "/ChordTabsGuitUkulV2/static/media/gitar-fret.cabb0f2cbbf01462c06f.png",
+    "index.html": "/ChordTabsGuitUkulV2/index.html",
+    "main.d6758d15.css.map": "/ChordTabsGuitUkulV2/static/css/main.d6758d15.css.map",
+    "main.d92782eb.js.map": "/ChordTabsGuitUkulV2/static/js/main.d92782eb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d6758d15.css",
+    "static/js/main.d92782eb.js"
+  ]
+}
